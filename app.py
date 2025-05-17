@@ -100,11 +100,11 @@ with st.sidebar:
     if st.button("Connect"):
         with st.spinner("Connecting the Database..."):
             try:
-            db = init_database(user, password, host, port, database)
-            st.session_state.db = db
-            st.success("Connected to Database!")
+                db = init_database(user, password, host, port, database)
+                st.session_state.db = db
+                st.success("Connected to Database!")
             except Exception as e:
-            st.error(f"Connection failed: {e}")
+                st.error(f"Connection failed: {e}")
 
 
 for message in st.session_state.chat_history:
