@@ -92,11 +92,13 @@ st.title("Chat with Database")
 with st.sidebar:
     st.subheader("Settings")
     st.write("This is chat application using Database. Connect to the Database and assist yourself")
-    st.text_input("host", value="sql12.freesqldatabase.com")
-    st.text_input("port", value="3306")
-    st.text_input("user", value="sql12779393")
-    st.text_input("password", type="password", value="vydhyala@123")
-    st.text_input("database", value="sql12779393")
+
+    host = st.text_input("Host", value="sql12.freesqldatabase.com")
+    port = st.text_input("Port", value="3306")
+    user = st.text_input("User", value="sql12779393")
+    password = st.text_input("Password", type="password", value="vydhyala@123")
+    database = st.text_input("Database", value="sql12779393")
+
     if st.button("Connect"):
         with st.spinner("Connecting the Database..."):
             try:
