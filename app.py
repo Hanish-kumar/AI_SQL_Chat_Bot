@@ -92,7 +92,7 @@ st.title("Chat with Database")
 with st.sidebar:
     st.subheader("Settings")
     st.write("This is chat application using Database. Connect to the Database and assist yourself")
-    st.text_input("host", value="http://sql12.freesqldatabase.com")
+    st.text_input("host", value="sql12.freesqldatabase.com")
     st.text_input("port", value="3306")
     st.text_input("user", value="sql12779393")
     st.text_input("password", type="password", value="vydhyala@123")
