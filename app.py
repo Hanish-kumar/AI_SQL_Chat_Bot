@@ -100,16 +100,11 @@ with st.sidebar:
     st.text_input("Password", type="password", value="vydhyala@123", key="Password")
     st.text_input("Database", value="sql12779393", key="Database")
     if st.button("Connect"):
-        with st.spinner("Connecting the Database..."):
-            db = init_database(
-                st.session_state["User"],
-                st.session_state["Password"],
-                st.session_state["Host"],
-                st.session_state["Port"],
-                st.session_state["Database"]
-            )
-            st.session_state.db=db
-            st.success("Connected to Database!")
+    with st.spinner("Connecting the Database..."):
+        db = init_database()
+        st.session_state.db = db
+        st.success("Connected to Database!")
+
 
 for message in st.session_state.chat_history:
     if isinstance(message, AIMessage):
