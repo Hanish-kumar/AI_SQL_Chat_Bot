@@ -100,7 +100,7 @@ with st.sidebar:
     if st.button("Connect"):
         with st.spinner("Connecting the Database..."):
             try:
-                db = init_database(user, password, host, port, database)
+                db = init_database(User, Password, Host, Port, Database)
                 st.session_state.db = db
                 st.success("Connected to Database!")
             except Exception as e:
