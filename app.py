@@ -101,9 +101,9 @@ with st.sidebar:
     st.text_input("Database", value="sql12779393", key="Database")
     if st.button("Connect"):
         with st.spinner("Connecting the Database..."):
-        db = init_database()
-        st.session_state.db = db
-        st.success("Connected to Database!")
+            db = init_database()
+            st.session_state.db = db
+            st.success("Connected to Database!")
 
 
 for message in st.session_state.chat_history:
