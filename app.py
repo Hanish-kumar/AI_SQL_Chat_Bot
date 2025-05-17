@@ -120,14 +120,19 @@ for message in st.session_state.chat_history:
             st.markdown(message.content)
 
 user_query = st.chat_input("Type a text...")
-if user_query is not None and user_query.strip() !="":
+
+if user_query is not None and user_query.strip() != "":
     st.session_state.chat_history.append(HumanMessage(content=user_query))
 
     with st.chat_message("Human"):
         st.markdown(user_query)
 
-    with st.chat_message("AI"):
-        response = get_response(user_query, st.session_state.db, st.session_state.chat_history)
-        st.markdown(response)
-
-    st.session_state.chat_history.append(AIMessage(content=response))
+    # Check if DB is connected before querying
+    if "db" in st.session_state:
+        with st.chat_message("AI"):
+            response = get_response(user_query, st.session_state.db, st.session_state.chat_history)
+            st.markdown(response)
+        st.session_state.chat_history.append(AIMessage(content=response))
+    else:
+        with st.chat_message("AI"):
+            st.markdown("⚠️ Please connect to the database first using the sidebar.")
