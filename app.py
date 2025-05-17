@@ -1,4 +1,3 @@
-from dotenv import load_dotenv
 from langchain_community.chat_models import ChatOllama
 from langchain_core.messages import AIMessage, HumanMessage
 from langchain_core.prompts import ChatPromptTemplate
