@@ -100,7 +100,7 @@ with st.sidebar:
     st.text_input("Password", type="password", value="vydhyala@123", key="Password")
     st.text_input("Database", value="sql12779393", key="Database")
     if st.button("Connect"):
-    with st.spinner("Connecting the Database..."):
+        with st.spinner("Connecting the Database..."):
         db = init_database()
         st.session_state.db = db
         st.success("Connected to Database!")
