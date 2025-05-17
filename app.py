@@ -7,7 +7,7 @@ from langchain_core.output_parsers import StrOutputParser
 import streamlit as st
 
 def init_database(user, password, host, port, database) -> SQLDatabase:
-    db_uri = f"mysql+mysqlconnector://{User}:{Password}@{Host}:{Port}/{Database}"
+    db_uri = f"mysql+mysqlconnector://{user}:{password}@{host}:{port}/{database}"
     return SQLDatabase.from_uri(db_uri)
 
 
@@ -92,15 +92,15 @@ st.title("Chat with Database")
 with st.sidebar:
     st.subheader("Settings")
     st.write("This is chat application using Database. Connect to the Database and assist yourself")
-    st.text_input("Host", value="http://sql12.freesqldatabase.com/")
-    st.text_input("Port", value="3306")
-    st.text_input("User", value="sql12779393")
-    st.text_input("Password", type="password", value="vydhyala@123")
-    st.text_input("Database", value="sql12779393")
+    st.text_input("host", value="http://sql12.freesqldatabase.com")
+    st.text_input("port", value="3306")
+    st.text_input("user", value="sql12779393")
+    st.text_input("password", type="password", value="vydhyala@123")
+    st.text_input("database", value="sql12779393")
     if st.button("Connect"):
         with st.spinner("Connecting the Database..."):
             try:
-                db = init_database(User, Password, Host, Port, Database)
+                db = init_database(user, password, host, port, database)
                 st.session_state.db = db
                 st.success("Connected to Database!")
             except Exception as e:
