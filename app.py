@@ -7,7 +7,7 @@ from langchain_core.output_parsers import StrOutputParser
 import streamlit as st
 
 def init_database(user, password, host, port, database) -> SQLDatabase:
-    db_uri = f"mysql+mysqlconnector://{user}:{password}@{host}:{port}/{database}"
+    db_uri = f"mysql+mysqlconnector://{User}:{Password}@{Host}:{Port}/{Database}"
     return SQLDatabase.from_uri(db_uri)
 
 
