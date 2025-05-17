@@ -83,7 +83,6 @@ if "chat_history" not in st.session_state:
     ]
 
 
-load_dotenv()
 
 st.set_page_config(page_title="Chat with Database", page_icon=":speech_balloon:")
 
