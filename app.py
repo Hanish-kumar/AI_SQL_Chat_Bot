@@ -6,8 +6,11 @@ from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 import streamlit as st
 
-def init_database(user: str, password: str, host: str, port: str, database: str) -> SQLDatabase:
-    db_uri = f"mysql+mysqlconnector://{user}:{password}@{host}:{port}/{database}"
+def init_database() -> SQLDatabase:
+    db_uri = (
+        f"mysql+mysqlconnector://{st.secrets['DB_USER']}:{st.secrets['DB_PASSWORD']}@"
+        f"{st.secrets['DB_HOST']}:{st.secrets['DB_PORT']}/{st.secrets['DB_NAME']}"
+    )
     return SQLDatabase.from_uri(db_uri)
 
 def get_sql_chain(db):
