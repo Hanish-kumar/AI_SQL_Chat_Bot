@@ -93,10 +93,10 @@ with st.sidebar:
     st.subheader("Settings")
     st.write("This is chat application using Database. Connect to the Database and assist yourself")
 
-    host = st.text_input("host", value="")
+    host = st.text_input("host", value="sql12.freesqldatabase.com/")
     port = st.text_input("port", value="3306")
     user = st.text_input("user", value="sql12779393")
-    password = st.text_input("password", type="password", value="vydhyala@123")
+    password = st.text_input("password", type="password", value="Wl5sll4pWp")
     database = st.text_input("database", value="sql12779393")
 
     if st.button("Connect"):
